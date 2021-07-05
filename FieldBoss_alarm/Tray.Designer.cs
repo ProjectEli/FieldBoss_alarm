@@ -141,6 +141,7 @@ namespace FieldBoss_alarm
             this.타이머10분ToolStripMenuItem.Name = "타이머10분ToolStripMenuItem";
             this.타이머10분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.타이머10분ToolStripMenuItem.Text = "10분전";
+            this.타이머10분ToolStripMenuItem.Click += new System.EventHandler(this.타이머10분ToolStripMenuItem_Click);
             // 
             // 타이머5분ToolStripMenuItem
             // 
@@ -148,6 +149,7 @@ namespace FieldBoss_alarm
             this.타이머5분ToolStripMenuItem.Name = "타이머5분ToolStripMenuItem";
             this.타이머5분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.타이머5분ToolStripMenuItem.Text = "5분전";
+            this.타이머5분ToolStripMenuItem.Click += new System.EventHandler(this.타이머5분ToolStripMenuItem_Click);
             // 
             // 타이머3분ToolStripMenuItem
             // 
@@ -157,6 +159,7 @@ namespace FieldBoss_alarm
             this.타이머3분ToolStripMenuItem.Name = "타이머3분ToolStripMenuItem";
             this.타이머3분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.타이머3분ToolStripMenuItem.Text = "3분전";
+            this.타이머3분ToolStripMenuItem.Click += new System.EventHandler(this.타이머3분ToolStripMenuItem_Click);
             // 
             // 타이머1분ToolStripMenuItem
             // 
@@ -166,6 +169,7 @@ namespace FieldBoss_alarm
             this.타이머1분ToolStripMenuItem.Name = "타이머1분ToolStripMenuItem";
             this.타이머1분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.타이머1분ToolStripMenuItem.Text = "1분전";
+            this.타이머1분ToolStripMenuItem.Click += new System.EventHandler(this.타이머1분ToolStripMenuItem_Click);
             // 
             // 알림OffToolStripMenuItem
             // 

@@ -141,20 +141,14 @@ namespace FieldBoss_alarm
 
         private void 골론ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            골론ToolStripMenuItem.Checked = !골론ToolStripMenuItem.Checked;
+            // 골론ToolStripMenuItem.Checked = !골론ToolStripMenuItem.Checked; // 아예 메뉴 아이템 속성에 클릭하면 체크되게 넣어버렸음
             if (골론ToolStripMenuItem.Checked)
             {
-                notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "골론 알림",
-                String.Concat("베리넨 루미 골론 알림이 실행되었습니다.", Environment.NewLine,
-                "현재시각: ", System.DateTime.Now.ToString("tt h:mm:ss")),
-                ToolTipIcon.Info);
+                알림표시("골론", "[베리넨 루미] 골론", true);
             }
             else
             {
-                notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "골론 알림",
-                String.Concat("베리넨 루미 골론 알림이 해제되었습니다.", Environment.NewLine,
-                "현재시각: ", System.DateTime.Now.ToString("tt h:mm:ss")),
-                ToolTipIcon.Info);
+                알림표시("골론", "[베리넨 루미] 골론", false);
             }
         }
 
@@ -165,22 +159,110 @@ namespace FieldBoss_alarm
 
         private void 골모답ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (골모답ToolStripMenuItem.Checked)
+            {
+                알림표시("골모답", "[베리넨 루미] 골모답", true);
+            }
+            else
+            {
+                알림표시("골모답", "[베리넨 루미] 골모답", false);
+            }
         }
 
         private void 아칸ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (아칸ToolStripMenuItem.Checked)
+            {
+                알림표시("아칸", "[아크론 요새] 아칸", true);
+            }
+            else
+            {
+                알림표시("아칸", "[아크론 요새] 아칸", false);
+            }
         }
 
         private void 스페르첸드ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (스페르첸드ToolStripMenuItem.Checked)
+            {
+                알림표시("스페르첸드", "[아크론 지하요새] 스페르첸드", true);
+            }
+            else
+            {
+                알림표시("스페르첸드", "[아크론 지하요새] 스페르첸드", false);
+            }
         }
 
         private void 프라바방어전ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (프라바방어전ToolStripMenuItem.Checked)
+            {
+                알림표시("프라바방어전", "[프라바 전초기지] 프라바방어전", true);
+            }
+            else
+            {
+                알림표시("프라바방어전", "[프라바 전초기지] 프라바방어전", false);
+            }
+        }
 
+        private void 알림표시(string bossName, string bossString, bool 실행flag)
+        {
+            string 실행string;
+            if (실행flag) { 실행string = "실행"; }
+            else { 실행string = "해제"; }
+
+            notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, bossName + " 알림",
+                String.Concat(bossString, " 알림이 ", 실행string, "되었습니다.", Environment.NewLine,
+                "현재시각: ", System.DateTime.Now.ToString("tt h:mm:ss")),
+                ToolTipIcon.Info);
+        }
+
+        private void 타이머10분ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (타이머10분ToolStripMenuItem.Checked)
+            {
+                알림표시("시간 설정", "10분 전", true);
+            }
+            else
+            {
+                알림표시("시간 설정", "10분 전", false);
+            }
+        }
+
+        private void 타이머5분ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (타이머5분ToolStripMenuItem.Checked)
+            {
+                알림표시("시간 설정", "5분 전", true);
+            }
+            else
+            {
+                알림표시("시간 설정", "5분 전", false);
+            }
+        }
+
+        private void 타이머3분ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (타이머3분ToolStripMenuItem.Checked)
+            {
+                알림표시("시간 설정", "3분 전", true);
+            }
+            else
+            {
+                알림표시("시간 설정", "3분 전", false);
+            }
+        }
+
+        private void 타이머1분ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (타이머1분ToolStripMenuItem.Checked)
+            {
+                알림표시("시간 설정", "1분 전", true);
+            }
+            else
+            {
+                알림표시("시간 설정", "1분 전", false);
+            }
         }
     }
 }
