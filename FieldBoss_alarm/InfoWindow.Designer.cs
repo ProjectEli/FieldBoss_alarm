@@ -60,10 +60,10 @@ namespace FieldBoss_alarm
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(172, 124);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(170, 12);
+            this.linkLabel1.Size = new System.Drawing.Size(190, 24);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "https://github.com/ProjectEli";
+            this.linkLabel1.Text = "https://github.com/ProjectEli/\r\nFieldBoss_alarm/releases/latest";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // InfoWindow

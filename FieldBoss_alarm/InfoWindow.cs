@@ -35,7 +35,7 @@ namespace FieldBoss_alarm
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/ProjectEli");
+            System.Diagnostics.Process.Start("https://github.com/ProjectEli/FieldBoss_alarm/releases/latest");
         }
     }
 
