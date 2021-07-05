@@ -4,6 +4,8 @@
 
 트레이 아이콘으로 실행되며 매우 가볍습니다.
 
+윈도우 10과 윈도우 11에서 테스트를 마쳤습니다.
+
 
 ## 사용법
 다운로드: **release를 클릭하세요!** [릴리즈 링크](https://github.com/ProjectEli/FieldBoss_alarm/releases/latest)
@@ -19,6 +21,8 @@ C#으로 제작되었고 Windows Forms를 사용했습니다.
 
 
 ## 연락처
+버그가 있는 경우 아래의 연락처로 연락 주세요.
+
 - [X] 인게임: [제르나] 듀움 (1:1이나 쪽지 남겨주시면 확인 가능합니다)
 
 - [X] 이메일: projecteli@카카오.com
