@@ -7,7 +7,7 @@
     <ProjectGuid>{C795FAF7-8985-421C-A52B-BCDF3844993A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>FieldBoss_alarm</RootNamespace>
-    <AssemblyName>FieldBoss_alarm</AssemblyName>
+    <AssemblyName>필드보스 알람</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>FieldBoss.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +55,7 @@
     <Compile Include="InfoWindow.Designer.cs">
       <DependentUpon>InfoWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="NsecTimerChecker.cs" />
     <Compile Include="Tray.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FieldBoss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FieldBoss.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

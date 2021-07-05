@@ -33,16 +33,16 @@ namespace FieldBoss_alarm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tray));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.골론061218시ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.베리넨루미골모답51321시ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.아크론요새아칸2시반9시반ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.스페르첸드148161923시ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.프라바방어전짝수시ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.골론ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.골모답ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.아칸ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.스페르첸드ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.프라바방어전ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.분전ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.분전ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.분전ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.분전ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.타이머10분ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.타이머5분ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.타이머3분ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.타이머1분ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.알림OffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -57,116 +57,128 @@ namespace FieldBoss_alarm
             this.알림OffToolStripMenuItem,
             this.종료ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(175, 92);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.골론061218시ToolStripMenuItem,
-            this.베리넨루미골모답51321시ToolStripMenuItem,
-            this.아크론요새아칸2시반9시반ToolStripMenuItem,
-            this.스페르첸드148161923시ToolStripMenuItem,
-            this.프라바방어전짝수시ToolStripMenuItem});
+            this.골론ToolStripMenuItem,
+            this.골모답ToolStripMenuItem,
+            this.아칸ToolStripMenuItem,
+            this.스페르첸드ToolStripMenuItem,
+            this.프라바방어전ToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
             this.toolStripMenuItem1.Text = "알림종류";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // 골론061218시ToolStripMenuItem
+            // 골론ToolStripMenuItem
             // 
-            this.골론061218시ToolStripMenuItem.Checked = true;
-            this.골론061218시ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.골론061218시ToolStripMenuItem.Name = "골론061218시ToolStripMenuItem";
-            this.골론061218시ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
-            this.골론061218시ToolStripMenuItem.Text = "베리넨 루미 골론(0,6,12,18시)";
-            this.골론061218시ToolStripMenuItem.Click += new System.EventHandler(this.골론061218시ToolStripMenuItem_Click);
+            this.골론ToolStripMenuItem.Checked = true;
+            this.골론ToolStripMenuItem.CheckOnClick = true;
+            this.골론ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.골론ToolStripMenuItem.Name = "골론ToolStripMenuItem";
+            this.골론ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.골론ToolStripMenuItem.Text = "베리넨 루미 골론(0,6,12,18시)";
+            this.골론ToolStripMenuItem.Click += new System.EventHandler(this.골론ToolStripMenuItem_Click);
             // 
-            // 베리넨루미골모답51321시ToolStripMenuItem
+            // 골모답ToolStripMenuItem
             // 
-            this.베리넨루미골모답51321시ToolStripMenuItem.Checked = true;
-            this.베리넨루미골모답51321시ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.베리넨루미골모답51321시ToolStripMenuItem.Name = "베리넨루미골모답51321시ToolStripMenuItem";
-            this.베리넨루미골모답51321시ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
-            this.베리넨루미골모답51321시ToolStripMenuItem.Text = "베리넨 루미 골모답(5,13,21시)";
-            this.베리넨루미골모답51321시ToolStripMenuItem.Click += new System.EventHandler(this.베리넨루미골모답51321시ToolStripMenuItem_Click);
+            this.골모답ToolStripMenuItem.Checked = true;
+            this.골모답ToolStripMenuItem.CheckOnClick = true;
+            this.골모답ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.골모답ToolStripMenuItem.Name = "골모답ToolStripMenuItem";
+            this.골모답ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.골모답ToolStripMenuItem.Text = "베리넨 루미 골모답(5,13,21시)";
+            this.골모답ToolStripMenuItem.Click += new System.EventHandler(this.골모답ToolStripMenuItem_Click);
             // 
-            // 아크론요새아칸2시반9시반ToolStripMenuItem
+            // 아칸ToolStripMenuItem
             // 
-            this.아크론요새아칸2시반9시반ToolStripMenuItem.Checked = true;
-            this.아크론요새아칸2시반9시반ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.아크론요새아칸2시반9시반ToolStripMenuItem.Name = "아크론요새아칸2시반9시반ToolStripMenuItem";
-            this.아크론요새아칸2시반9시반ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
-            this.아크론요새아칸2시반9시반ToolStripMenuItem.Text = "아크론 요새 아칸(2시반,9시반)";
-            this.아크론요새아칸2시반9시반ToolStripMenuItem.Click += new System.EventHandler(this.아크론요새아칸2시반9시반ToolStripMenuItem_Click);
+            this.아칸ToolStripMenuItem.Checked = true;
+            this.아칸ToolStripMenuItem.CheckOnClick = true;
+            this.아칸ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.아칸ToolStripMenuItem.Name = "아칸ToolStripMenuItem";
+            this.아칸ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.아칸ToolStripMenuItem.Text = "아크론 요새 아칸(2시반,9시반)";
+            this.아칸ToolStripMenuItem.Click += new System.EventHandler(this.아칸ToolStripMenuItem_Click);
             // 
-            // 스페르첸드148161923시ToolStripMenuItem
+            // 스페르첸드ToolStripMenuItem
             // 
-            this.스페르첸드148161923시ToolStripMenuItem.Checked = true;
-            this.스페르첸드148161923시ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.스페르첸드148161923시ToolStripMenuItem.Name = "스페르첸드148161923시ToolStripMenuItem";
-            this.스페르첸드148161923시ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
-            this.스페르첸드148161923시ToolStripMenuItem.Text = "아크론 지하요새 스페르첸드(1,4,8,16,19,23시)";
-            this.스페르첸드148161923시ToolStripMenuItem.Click += new System.EventHandler(this.스페르첸드148161923시ToolStripMenuItem_Click);
+            this.스페르첸드ToolStripMenuItem.Checked = true;
+            this.스페르첸드ToolStripMenuItem.CheckOnClick = true;
+            this.스페르첸드ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.스페르첸드ToolStripMenuItem.Name = "스페르첸드ToolStripMenuItem";
+            this.스페르첸드ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.스페르첸드ToolStripMenuItem.Text = "아크론 지하요새 스페르첸드(1,4,8,16,19,23시)";
+            this.스페르첸드ToolStripMenuItem.Click += new System.EventHandler(this.스페르첸드ToolStripMenuItem_Click);
             // 
-            // 프라바방어전짝수시ToolStripMenuItem
+            // 프라바방어전ToolStripMenuItem
             // 
-            this.프라바방어전짝수시ToolStripMenuItem.Checked = true;
-            this.프라바방어전짝수시ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.프라바방어전짝수시ToolStripMenuItem.Name = "프라바방어전짝수시ToolStripMenuItem";
-            this.프라바방어전짝수시ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
-            this.프라바방어전짝수시ToolStripMenuItem.Text = "프라바 전초기지 프라바방어전(짝수시)";
-            this.프라바방어전짝수시ToolStripMenuItem.Click += new System.EventHandler(this.프라바방어전짝수시ToolStripMenuItem_Click);
+            this.프라바방어전ToolStripMenuItem.Checked = true;
+            this.프라바방어전ToolStripMenuItem.CheckOnClick = true;
+            this.프라바방어전ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.프라바방어전ToolStripMenuItem.Name = "프라바방어전ToolStripMenuItem";
+            this.프라바방어전ToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.프라바방어전ToolStripMenuItem.Text = "프라바 전초기지 프라바방어전(짝수시)";
+            this.프라바방어전ToolStripMenuItem.Click += new System.EventHandler(this.프라바방어전ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.분전ToolStripMenuItem,
-            this.분전ToolStripMenuItem1,
-            this.분전ToolStripMenuItem2,
-            this.분전ToolStripMenuItem3});
+            this.타이머10분ToolStripMenuItem,
+            this.타이머5분ToolStripMenuItem,
+            this.타이머3분ToolStripMenuItem,
+            this.타이머1분ToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(174, 22);
             this.toolStripMenuItem2.Text = "알림시간";
             // 
-            // 분전ToolStripMenuItem
+            // 타이머10분ToolStripMenuItem
             // 
-            this.분전ToolStripMenuItem.Checked = true;
-            this.분전ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.분전ToolStripMenuItem.Name = "분전ToolStripMenuItem";
-            this.분전ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.분전ToolStripMenuItem.Text = "10분전";
+            this.타이머10분ToolStripMenuItem.Checked = true;
+            this.타이머10분ToolStripMenuItem.CheckOnClick = true;
+            this.타이머10분ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.타이머10분ToolStripMenuItem.Name = "타이머10분ToolStripMenuItem";
+            this.타이머10분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.타이머10분ToolStripMenuItem.Text = "10분전";
             // 
-            // 분전ToolStripMenuItem1
+            // 타이머5분ToolStripMenuItem
             // 
-            this.분전ToolStripMenuItem1.Name = "분전ToolStripMenuItem1";
-            this.분전ToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
-            this.분전ToolStripMenuItem1.Text = "5분전";
+            this.타이머5분ToolStripMenuItem.CheckOnClick = true;
+            this.타이머5분ToolStripMenuItem.Name = "타이머5분ToolStripMenuItem";
+            this.타이머5분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.타이머5분ToolStripMenuItem.Text = "5분전";
             // 
-            // 분전ToolStripMenuItem2
+            // 타이머3분ToolStripMenuItem
             // 
-            this.분전ToolStripMenuItem2.Checked = true;
-            this.분전ToolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.분전ToolStripMenuItem2.Name = "분전ToolStripMenuItem2";
-            this.분전ToolStripMenuItem2.Size = new System.Drawing.Size(112, 22);
-            this.분전ToolStripMenuItem2.Text = "3분전";
+            this.타이머3분ToolStripMenuItem.Checked = true;
+            this.타이머3분ToolStripMenuItem.CheckOnClick = true;
+            this.타이머3분ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.타이머3분ToolStripMenuItem.Name = "타이머3분ToolStripMenuItem";
+            this.타이머3분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.타이머3분ToolStripMenuItem.Text = "3분전";
             // 
-            // 분전ToolStripMenuItem3
+            // 타이머1분ToolStripMenuItem
             // 
-            this.분전ToolStripMenuItem3.Name = "분전ToolStripMenuItem3";
-            this.분전ToolStripMenuItem3.Size = new System.Drawing.Size(112, 22);
-            this.분전ToolStripMenuItem3.Text = "1분전";
+            this.타이머1분ToolStripMenuItem.Checked = true;
+            this.타이머1분ToolStripMenuItem.CheckOnClick = true;
+            this.타이머1분ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.타이머1분ToolStripMenuItem.Name = "타이머1분ToolStripMenuItem";
+            this.타이머1분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.타이머1분ToolStripMenuItem.Text = "1분전";
             // 
             // 알림OffToolStripMenuItem
             // 
+            this.알림OffToolStripMenuItem.CheckOnClick = true;
             this.알림OffToolStripMenuItem.Name = "알림OffToolStripMenuItem";
-            this.알림OffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.알림OffToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.알림OffToolStripMenuItem.Text = "전체알림 일시정지";
             this.알림OffToolStripMenuItem.Click += new System.EventHandler(this.알림OffToolStripMenuItem_Click);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
             // 
@@ -197,16 +209,16 @@ namespace FieldBoss_alarm
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ToolStripMenuItem 종료ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 골론061218시ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 골론ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem 분전ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 분전ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 분전ToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem 분전ToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem 베리넨루미골모답51321시ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 아크론요새아칸2시반9시반ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 스페르첸드148161923시ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 프라바방어전짝수시ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 타이머10분ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 타이머5분ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 타이머3분ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 타이머1분ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 골모답ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 아칸ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 스페르첸드ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 프라바방어전ToolStripMenuItem;
     }
 }
 

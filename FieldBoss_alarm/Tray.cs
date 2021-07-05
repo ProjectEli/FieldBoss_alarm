@@ -12,35 +12,30 @@ namespace FieldBoss_alarm
     public partial class Tray : Form
     {
         private System.Timers.Timer timer;
+        private NsecTimerChecker timerChecker10분;
+        private NsecTimerChecker timerChecker5분;
+        private NsecTimerChecker timerChecker3분;
+        private NsecTimerChecker timerChecker1분;
         int errorcount = 0;
         int ERRORLIMIT = 5;
         private static int _TIMERINTERVAL = 5000; // ms
         public static int TIMERINTERVAL {  get { return _TIMERINTERVAL; } }
 
-        int DEFAULTTIMEOUT = 3000; // ms
-
-
-        TimeSpan tenminute = new System.TimeSpan(0, 0, 10, 0); // 10min
-        TimeSpan fiveminute = new System.TimeSpan(0, 0, 5, 0); // 5min
-        TimeSpan threeminute = new System.TimeSpan(0, 0, 3, 0); // 3min
-        TimeSpan oneminute = new System.TimeSpan(0, 0, 1, 0); // 1min
-
-        DateTime [] 골론시간= new DateTime[] {Convert.ToDateTime("06:00:00"), Convert.ToDateTime("12:00:00"),
-            Convert.ToDateTime("18:00:00"), Convert.ToDateTime("23:59:59") }; // 24:00:00은 표현불가
-        DateTime[] 골모답시간 = new DateTime[] {Convert.ToDateTime("05:00:00"), Convert.ToDateTime("13:00:00"),
-            Convert.ToDateTime("21:00:00") };
-        DateTime[] 아칸시간 = new DateTime[] {Convert.ToDateTime("14:30:00"), Convert.ToDateTime("21:30:00")};
-        DateTime[] 스페르첸드시간 = new DateTime[] {Convert.ToDateTime("01:00:00"), Convert.ToDateTime("04:00:00"),
-            Convert.ToDateTime("08:00:00"), Convert.ToDateTime("16:00:00"),
-            Convert.ToDateTime("19:00:00"), Convert.ToDateTime("23:00:00") };
-        DateTime[] 프라바방어전시간 = new DateTime[] {Convert.ToDateTime("02:00:00"), Convert.ToDateTime("04:00:00"),
-            Convert.ToDateTime("06:00:00"), Convert.ToDateTime("08:00:00"),
-            Convert.ToDateTime("10:00:00"), Convert.ToDateTime("12:00:00"),
-            Convert.ToDateTime("14:00:00"), Convert.ToDateTime("16:00:00"),
-            Convert.ToDateTime("18:00:00"), Convert.ToDateTime("20:00:00"),
-            Convert.ToDateTime("22:00:00"), Convert.ToDateTime("23:59:59") };
+        private int DEFAULTTIMEOUT = 3000; // ms
 
         delegate void TimerInvoker();
+
+        public static bool 골론enabled;
+        public static bool 골모답enabled;
+        public static bool 아칸enabled;
+        public static bool 스페르첸드enabled;
+        public static bool 프라바방어전enabled;
+
+        public static bool 타이머10분enabled;
+        public static bool 타이머5분enabled;
+        public static bool 타이머3분enabled;
+        public static bool 타이머1분enabled;
+
 
         public Tray()
         {
@@ -58,72 +53,53 @@ namespace FieldBoss_alarm
             notifyIcon1.ContextMenuStrip = contextMenuStrip1;
             notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "실행 확인", "필드보스 알람 예약이 실행되었습니다.", ToolTipIcon.Info);
 
+            골론enabled = 골론ToolStripMenuItem.Checked;
+            골모답enabled = 골모답ToolStripMenuItem.Checked;
+            아칸enabled = 아칸ToolStripMenuItem.Checked;
+            스페르첸드enabled = 스페르첸드ToolStripMenuItem.Checked;
+            프라바방어전enabled = 프라바방어전ToolStripMenuItem.Checked;
+
+            타이머10분enabled = 타이머10분ToolStripMenuItem.Checked;
+            타이머5분enabled = 타이머5분ToolStripMenuItem.Checked;
+            타이머3분enabled = 타이머3분ToolStripMenuItem.Checked;
+            타이머1분enabled = 타이머1분ToolStripMenuItem.Checked;
+
             timer = new System.Timers.Timer(); 
             timer.Interval = _TIMERINTERVAL; // define timer with interval [ms]
             timer.Elapsed += OnTimedEvent;
             timer.Enabled = !알림OffToolStripMenuItem.Checked; // start the timer
+
+            timerChecker10분 = new NsecTimerChecker(600);
+            timerChecker5분 = new NsecTimerChecker(300);
+            timerChecker3분 = new NsecTimerChecker(180);
+            timerChecker1분 = new NsecTimerChecker(60);
         }
 
         private void OnTimedEvent(Object sender, EventArgs e)
         {
             String[] AlarmTextArray = new String[toolStripMenuItem1.DropDownItems.Count];
-            bool 시간10분전flag = 분전ToolStripMenuItem.Checked;
-            bool 시간5분전flag = 분전ToolStripMenuItem1.Checked;
-            bool 시간3분전flag = 분전ToolStripMenuItem2.Checked;
-            bool 시간1분전flag = 분전ToolStripMenuItem3.Checked;
             DateTime currentTime = System.DateTime.Now;
-
-
-            bool 골론flag = 골론061218시ToolStripMenuItem.Checked;
-            bool 골모답flag = 베리넨루미골모답51321시ToolStripMenuItem.Checked;
-            bool 아칸flag = 아크론요새아칸2시반9시반ToolStripMenuItem.Checked;
-            bool 스페르첸드flag = 스페르첸드148161923시ToolStripMenuItem.Checked;
-            bool 프라바방어전flag = 프라바방어전짝수시ToolStripMenuItem.Checked;
-
-            if (골론flag) {
-                for ( int i =0; i<골론시간.Length; i++)
-                {
-                    Console.WriteLine(i.ToString());
-                    if (시간1분전flag)
-                    {
-                        if (isTimeToAlarm(currentTime, 골론시간[i], oneminute))
-                        {
-                            //AlarmTextArray[i] = "골론 1분 전!! 베리넨 루미로 가세요!";
-                            notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "보스 알림",
-                                String.Concat("골론 1분 전!! 베리넨 루미로 가세요!", Environment.NewLine,
-                                "현재시각: ", System.DateTime.Now.ToString("tt h:mm:ss")),
-                                ToolTipIcon.Info);
-                        }
-                    }
-                    else if (시간3분전flag)
-                    {
-                        if (isTimeToAlarm(currentTime, 골론시간[i], threeminute))
-                        {
-                            AlarmTextArray[i] = "골론 3분 전!! 베리넨 루미로 가세요!";
-                        }
-                    }
-                    else if (시간5분전flag)
-                    {
-                        if (isTimeToAlarm(currentTime, 골론시간[i], threeminute))
-                        {
-                            AlarmTextArray[i] = "골론 5분 전!! 베리넨 루미로 가세요!";
-                        }
-                    }
-                    else if (시간10분전flag)
-                    {
-                        if (isTimeToAlarm(currentTime, 골론시간[i], threeminute))
-                        {
-                            AlarmTextArray[i] = "골론 10분 전!! 베리넨 루미로 가세요!";
-                        }
-                    }
-                    else
-                    {
-                        notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "보스 알림",
-                            String.Concat("골론 시간 아님", Environment.NewLine,
-                            "현재시각: ", System.DateTime.Now.ToString("tt h:mm:ss")),
-                            ToolTipIcon.Info);
-                    }
-                }
+            string 알람문자열종합 = "";
+            if (타이머1분enabled)
+            {
+                알람문자열종합 += String.Join(Environment.NewLine, timerChecker1분.알람문자열확인(currentTime));
+            }
+            if (타이머3분enabled)
+            {
+                알람문자열종합 += String.Join(Environment.NewLine, timerChecker3분.알람문자열확인(currentTime));
+            }
+            if (타이머5분enabled)
+            {
+                알람문자열종합 += String.Join(Environment.NewLine, timerChecker5분.알람문자열확인(currentTime));
+            }
+            if (타이머10분enabled)
+            {
+                알람문자열종합 += String.Join(Environment.NewLine, timerChecker10분.알람문자열확인(currentTime));
+            }
+            if (! String.IsNullOrEmpty(알람문자열종합))
+            {
+                notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "보스 알림",
+                    "현재시각: " + System.DateTime.Now.ToString("tt h:mm:ss") + Environment.NewLine + 알람문자열종합,ToolTipIcon.Info);
             }
         }
 
@@ -151,13 +127,22 @@ namespace FieldBoss_alarm
 
         private void 알림OffToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            timer.Enabled = false;
+            timer.Enabled = !알림OffToolStripMenuItem.Checked;
+            if (timer.Enabled)
+            {
+                notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "필드보스 알림 재개", "모든 알림이 다시 정상 작동합니다.", ToolTipIcon.Info);
+            }
+            else
+            {
+                notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "필드보스 알림 일시중지", "모든 알림이 일시중지되었습니다.", ToolTipIcon.Info);
+            }
+
         }
 
-        private void 골론061218시ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 골론ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            골론061218시ToolStripMenuItem.Checked = !골론061218시ToolStripMenuItem.Checked;
-            if (골론061218시ToolStripMenuItem.Checked)
+            골론ToolStripMenuItem.Checked = !골론ToolStripMenuItem.Checked;
+            if (골론ToolStripMenuItem.Checked)
             {
                 notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "골론 알림",
                 String.Concat("베리넨 루미 골론 알림이 실행되었습니다.", Environment.NewLine,
@@ -178,22 +163,22 @@ namespace FieldBoss_alarm
 
         }
 
-        private void 베리넨루미골모답51321시ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 골모답ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void 아크론요새아칸2시반9시반ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 아칸ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void 스페르첸드148161923시ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 스페르첸드ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void 프라바방어전짝수시ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 프라바방어전ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
