@@ -77,7 +77,11 @@ namespace FieldBoss_alarm
 
         private void OnTimedEvent(Object sender, EventArgs e)
         {
-            String[] AlarmTextArray = new String[toolStripMenuItem1.DropDownItems.Count];
+            UpdateBossEnabled(timerChecker10분);
+            UpdateBossEnabled(timerChecker5분);
+            UpdateBossEnabled(timerChecker3분);
+            UpdateBossEnabled(timerChecker1분);
+
             DateTime currentTime = System.DateTime.Now;
             string 알람문자열종합 = "";
             if (타이머1분enabled)
@@ -102,6 +106,15 @@ namespace FieldBoss_alarm
                     "현재시각: " + System.DateTime.Now.ToString("tt h:mm:ss") + Environment.NewLine + 알람문자열종합,ToolTipIcon.Info);
             }
         }
+        
+        private void UpdateBossEnabled(NsecTimerChecker timerChecker)
+        {
+            timerChecker.골론알림Enabled = 골론enabled;
+            timerChecker.골모답알림Enabled = 골모답enabled;
+            timerChecker.아칸알림Enabled = 아칸enabled;
+            timerChecker.스페르첸드알림Enabled = 스페르첸드enabled;
+            timerChecker.프라바방어전알림Enabled = 프라바방어전enabled;
+        }
 
         private void Tray_Load(object sender, EventArgs e)
         {
@@ -113,6 +126,7 @@ namespace FieldBoss_alarm
             if (!InfoWindow.Instance.Visible)
             {
                 InfoWindow.Instance.ShowDialog();
+                InfoWindow.Instance.Activate();
             }
             else
             {
@@ -219,6 +233,7 @@ namespace FieldBoss_alarm
 
         private void 타이머10분ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            타이머10분enabled = 타이머10분ToolStripMenuItem.Checked;
             if (타이머10분ToolStripMenuItem.Checked)
             {
                 알림표시("시간 설정", "10분 전", true);
@@ -231,6 +246,8 @@ namespace FieldBoss_alarm
 
         private void 타이머5분ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            타이머5분enabled = 타이머5분ToolStripMenuItem.Checked;
             if (타이머5분ToolStripMenuItem.Checked)
             {
                 알림표시("시간 설정", "5분 전", true);
@@ -243,6 +260,8 @@ namespace FieldBoss_alarm
 
         private void 타이머3분ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            타이머3분enabled = 타이머3분ToolStripMenuItem.Checked;
             if (타이머3분ToolStripMenuItem.Checked)
             {
                 알림표시("시간 설정", "3분 전", true);
@@ -255,6 +274,7 @@ namespace FieldBoss_alarm
 
         private void 타이머1분ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            타이머1분enabled = 타이머1분ToolStripMenuItem.Checked;
             if (타이머1분ToolStripMenuItem.Checked)
             {
                 알림표시("시간 설정", "1분 전", true);
@@ -262,6 +282,19 @@ namespace FieldBoss_alarm
             else
             {
                 알림표시("시간 설정", "1분 전", false);
+            }
+        }
+
+        private void 버전정보ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!InfoWindow.Instance.Visible)
+            {
+                InfoWindow.Instance.ShowDialog();
+                InfoWindow.Instance.Activate();
+            }
+            else
+            {
+                InfoWindow.Instance.Activate();
             }
         }
     }

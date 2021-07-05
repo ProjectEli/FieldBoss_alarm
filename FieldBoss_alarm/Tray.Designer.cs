@@ -46,6 +46,7 @@ namespace FieldBoss_alarm
             this.알림OffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.버전정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,9 +56,10 @@ namespace FieldBoss_alarm
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.알림OffToolStripMenuItem,
+            this.버전정보ToolStripMenuItem,
             this.종료ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(175, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 136);
             // 
             // toolStripMenuItem1
             // 
@@ -193,6 +195,13 @@ namespace FieldBoss_alarm
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // 버전정보ToolStripMenuItem
+            // 
+            this.버전정보ToolStripMenuItem.Name = "버전정보ToolStripMenuItem";
+            this.버전정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.버전정보ToolStripMenuItem.Text = "버전정보";
+            this.버전정보ToolStripMenuItem.Click += new System.EventHandler(this.버전정보ToolStripMenuItem_Click);
+            // 
             // Tray
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -223,6 +232,7 @@ namespace FieldBoss_alarm
         private System.Windows.Forms.ToolStripMenuItem 아칸ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 스페르첸드ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 프라바방어전ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 버전정보ToolStripMenuItem;
     }
 }
 
