@@ -55,7 +55,7 @@ namespace FieldBoss_alarm
             }
             if (아칸알림Enabled && isTimeToAlarm(currentTime, _아칸시간, this.NsecTimeSpan))
             {
-                알람문자열.Add("[베리넨 루미] 아칸 " + makeMMssString(this.NsecTimeSpan));
+                알람문자열.Add("[아크론 요새] 아칸 " + makeMMssString(this.NsecTimeSpan));
             }
             if (스페르첸드알림Enabled && isTimeToAlarm(currentTime, _스페르첸드시간, this.NsecTimeSpan))
             {
