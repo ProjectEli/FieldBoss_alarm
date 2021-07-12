@@ -298,5 +298,68 @@ namespace FieldBoss_alarm
                 InfoWindow.Instance.Activate();
             }
         }
+
+        private void 샘플알림보기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "(샘플) 골론 알림",
+                String.Concat("[베리넨 루미] 골론 10분 0초 전!!", Environment.NewLine,
+                "현재시각: ", System.DateTime.Now.ToString("tt h:mm:ss")),
+                ToolTipIcon.Info);
+        }
+
+        private void 윈도우시작시자동실행ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (윈도우시작시자동실행ToolStripMenuItem.Checked)
+            {
+                시작프로그램등록("TW_FieldBoss_Alarm", Application.ExecutablePath);
+            }
+            else
+            {
+                시작프로그램등록해제("TW_FieldBoss_Alarm", Application.ExecutablePath);
+            }
+        }
+
+        private void 시작프로그램등록해제(string programName, string executablePath)
+        {
+            using (var regKey = GetRegKey(_startupRegPath, true))
+            {
+                try
+                {
+                    if (regKey.GetValue(programName) != null)
+                    {
+                        regKey.DeleteValue(programName,false);
+                    }
+                    regKey.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        private static readonly string _startupRegPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+        private Microsoft.Win32.RegistryKey GetRegKey(string regPath, bool writable)
+        {
+            return Microsoft.Win32.Registry.CurrentUser.OpenSubKey(regPath, writable);
+        }
+        private void 시작프로그램등록(string programName, string executablePath)
+        {
+            using (var regKey = GetRegKey(_startupRegPath, true))
+            {
+                try
+                {
+                    if (regKey.GetValue(programName) == null)
+                    {
+                        regKey.SetValue(programName, executablePath);
+                    }
+                    regKey.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
     }
 }

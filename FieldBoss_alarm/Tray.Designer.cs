@@ -44,9 +44,11 @@ namespace FieldBoss_alarm
             this.타이머3분ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.타이머1분ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.알림OffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.버전정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.버전정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.샘플알림보기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.윈도우시작시자동실행ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,10 +58,12 @@ namespace FieldBoss_alarm
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.알림OffToolStripMenuItem,
+            this.샘플알림보기ToolStripMenuItem,
             this.버전정보ToolStripMenuItem,
+            this.윈도우시작시자동실행ToolStripMenuItem,
             this.종료ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(203, 180);
             // 
             // toolStripMenuItem1
             // 
@@ -70,7 +74,7 @@ namespace FieldBoss_alarm
             this.스페르첸드ToolStripMenuItem,
             this.프라바방어전ToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "알림종류";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -132,7 +136,7 @@ namespace FieldBoss_alarm
             this.타이머3분ToolStripMenuItem,
             this.타이머1분ToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(174, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "알림시간";
             // 
             // 타이머10분ToolStripMenuItem
@@ -141,7 +145,7 @@ namespace FieldBoss_alarm
             this.타이머10분ToolStripMenuItem.CheckOnClick = true;
             this.타이머10분ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.타이머10분ToolStripMenuItem.Name = "타이머10분ToolStripMenuItem";
-            this.타이머10분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.타이머10분ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.타이머10분ToolStripMenuItem.Text = "10분전";
             this.타이머10분ToolStripMenuItem.Click += new System.EventHandler(this.타이머10분ToolStripMenuItem_Click);
             // 
@@ -149,7 +153,7 @@ namespace FieldBoss_alarm
             // 
             this.타이머5분ToolStripMenuItem.CheckOnClick = true;
             this.타이머5분ToolStripMenuItem.Name = "타이머5분ToolStripMenuItem";
-            this.타이머5분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.타이머5분ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.타이머5분ToolStripMenuItem.Text = "5분전";
             this.타이머5분ToolStripMenuItem.Click += new System.EventHandler(this.타이머5분ToolStripMenuItem_Click);
             // 
@@ -159,7 +163,7 @@ namespace FieldBoss_alarm
             this.타이머3분ToolStripMenuItem.CheckOnClick = true;
             this.타이머3분ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.타이머3분ToolStripMenuItem.Name = "타이머3분ToolStripMenuItem";
-            this.타이머3분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.타이머3분ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.타이머3분ToolStripMenuItem.Text = "3분전";
             this.타이머3분ToolStripMenuItem.Click += new System.EventHandler(this.타이머3분ToolStripMenuItem_Click);
             // 
@@ -169,7 +173,7 @@ namespace FieldBoss_alarm
             this.타이머1분ToolStripMenuItem.CheckOnClick = true;
             this.타이머1분ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.타이머1분ToolStripMenuItem.Name = "타이머1분ToolStripMenuItem";
-            this.타이머1분ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.타이머1분ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.타이머1분ToolStripMenuItem.Text = "1분전";
             this.타이머1분ToolStripMenuItem.Click += new System.EventHandler(this.타이머1분ToolStripMenuItem_Click);
             // 
@@ -177,14 +181,21 @@ namespace FieldBoss_alarm
             // 
             this.알림OffToolStripMenuItem.CheckOnClick = true;
             this.알림OffToolStripMenuItem.Name = "알림OffToolStripMenuItem";
-            this.알림OffToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.알림OffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.알림OffToolStripMenuItem.Text = "전체알림 일시정지";
             this.알림OffToolStripMenuItem.Click += new System.EventHandler(this.알림OffToolStripMenuItem_Click);
+            // 
+            // 버전정보ToolStripMenuItem
+            // 
+            this.버전정보ToolStripMenuItem.Name = "버전정보ToolStripMenuItem";
+            this.버전정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.버전정보ToolStripMenuItem.Text = "버전정보";
+            this.버전정보ToolStripMenuItem.Click += new System.EventHandler(this.버전정보ToolStripMenuItem_Click);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.종료ToolStripMenuItem.Text = "종료";
             this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
             // 
@@ -195,12 +206,20 @@ namespace FieldBoss_alarm
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
-            // 버전정보ToolStripMenuItem
+            // 샘플알림보기ToolStripMenuItem
             // 
-            this.버전정보ToolStripMenuItem.Name = "버전정보ToolStripMenuItem";
-            this.버전정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.버전정보ToolStripMenuItem.Text = "버전정보";
-            this.버전정보ToolStripMenuItem.Click += new System.EventHandler(this.버전정보ToolStripMenuItem_Click);
+            this.샘플알림보기ToolStripMenuItem.Name = "샘플알림보기ToolStripMenuItem";
+            this.샘플알림보기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.샘플알림보기ToolStripMenuItem.Text = "샘플 알림 보기";
+            this.샘플알림보기ToolStripMenuItem.Click += new System.EventHandler(this.샘플알림보기ToolStripMenuItem_Click);
+            // 
+            // 윈도우시작시자동실행ToolStripMenuItem
+            // 
+            this.윈도우시작시자동실행ToolStripMenuItem.CheckOnClick = true;
+            this.윈도우시작시자동실행ToolStripMenuItem.Name = "윈도우시작시자동실행ToolStripMenuItem";
+            this.윈도우시작시자동실행ToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.윈도우시작시자동실행ToolStripMenuItem.Text = "윈도우 시작시 자동실행";
+            this.윈도우시작시자동실행ToolStripMenuItem.Click += new System.EventHandler(this.윈도우시작시자동실행ToolStripMenuItem_Click);
             // 
             // Tray
             // 
@@ -233,6 +252,8 @@ namespace FieldBoss_alarm
         private System.Windows.Forms.ToolStripMenuItem 스페르첸드ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 프라바방어전ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 버전정보ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 샘플알림보기ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 윈도우시작시자동실행ToolStripMenuItem;
     }
 }
 
