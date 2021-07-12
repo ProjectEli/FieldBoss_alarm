@@ -18,6 +18,7 @@ namespace FieldBoss_alarm
         private NsecTimerChecker timerChecker1분;
         int errorcount = 0;
         int ERRORLIMIT = 5;
+        string programName = "TW_FieldBoss_Alarm";
         private static int _TIMERINTERVAL = 5000; // ms
         public static int TIMERINTERVAL {  get { return _TIMERINTERVAL; } }
 
@@ -73,6 +74,8 @@ namespace FieldBoss_alarm
             timerChecker5분 = new NsecTimerChecker(300);
             timerChecker3분 = new NsecTimerChecker(180);
             timerChecker1분 = new NsecTimerChecker(60);
+
+            시작프로그램등록체크();
         }
 
         private void OnTimedEvent(Object sender, EventArgs e)
@@ -311,11 +314,11 @@ namespace FieldBoss_alarm
         {
             if (윈도우시작시자동실행ToolStripMenuItem.Checked)
             {
-                시작프로그램등록("TW_FieldBoss_Alarm", Application.ExecutablePath);
+                시작프로그램등록(programName, Application.ExecutablePath);
             }
             else
             {
-                시작프로그램등록해제("TW_FieldBoss_Alarm", Application.ExecutablePath);
+                시작프로그램등록해제(programName, Application.ExecutablePath);
             }
         }
 
@@ -352,6 +355,33 @@ namespace FieldBoss_alarm
                     if (regKey.GetValue(programName) == null)
                     {
                         regKey.SetValue(programName, executablePath);
+                    }
+                    regKey.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        private void 시작프로그램등록체크()
+        {
+            using (var regKey = GetRegKey(_startupRegPath, true))
+            {
+                try
+                {
+                    if (regKey.GetValue(programName) == null)
+                    {
+                        윈도우시작시자동실행ToolStripMenuItem.Checked = false;
+                    }
+                    else if ((string)regKey.GetValue(programName) == Application.ExecutablePath)
+                    {
+                        윈도우시작시자동실행ToolStripMenuItem.Checked = false;
+                    }
+                    else
+                    {
+                        윈도우시작시자동실행ToolStripMenuItem.Checked = true;
                     }
                     regKey.Close();
                 }
