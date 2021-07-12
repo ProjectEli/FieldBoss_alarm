@@ -82,7 +82,8 @@ namespace FieldBoss_alarm
             UpdateBossEnabled(timerChecker3분);
             UpdateBossEnabled(timerChecker1분);
 
-            DateTime currentTime = System.DateTime.Now;
+            DateTime currentTime = System.DateTime.UtcNow;
+            currentTime= currentTime.AddHours(9);
             string 알람문자열종합 = "";
             if (타이머1분enabled)
             {
