@@ -16,7 +16,7 @@ namespace FieldBoss_alarm
         static void Main()
         {
             bool flagMutex;
-            Mutex m_hMutex = new Mutex(true, "테일즈위버 보스알림", out flagMutex);
+            Mutex m_hMutex = new Mutex(true, string.Concat("테일즈위버 보스알림 ",Tray.VERSIONSTRING), out flagMutex);
             if (flagMutex)
             {
                 Application.EnableVisualStyles();

@@ -19,6 +19,7 @@ namespace FieldBoss_alarm
         int errorcount = 0;
         int ERRORLIMIT = 5;
         string programName = "TW_FieldBoss_Alarm";
+        public static string VERSIONSTRING = "v1.3.1";
         private static int _TIMERINTERVAL = 5000; // ms
         public static int TIMERINTERVAL {  get { return _TIMERINTERVAL; } }
 
@@ -375,7 +376,7 @@ namespace FieldBoss_alarm
                     {
                         윈도우시작시자동실행ToolStripMenuItem.Checked = false;
                     }
-                    else if ((string)regKey.GetValue(programName) == Application.ExecutablePath)
+                    else if ((string)regKey.GetValue(programName) != Application.ExecutablePath)
                     {
                         윈도우시작시자동실행ToolStripMenuItem.Checked = false;
                     }

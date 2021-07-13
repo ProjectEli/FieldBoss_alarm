@@ -53,8 +53,7 @@ namespace FieldBoss_alarm
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 72);
             this.label1.TabIndex = 4;
-            this.label1.Text = "테일즈위버 필드보스 알림 v1.3\r\n\r\nmade by [제르나] 듀움\r\ne-mail: projecteli@kakao.com\r\n\r\n최신 버전 다운";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = string.Concat("테일즈위버 필드보스 알림 ",Tray.VERSIONSTRING,"\r\n\r\nmade by [제르나] 듀움\r\ne-mail: projecteli@kakao.com\r\n\r\n최신 버전 다운");
             // 
             // linkLabel1
             // 
@@ -89,5 +88,6 @@ namespace FieldBoss_alarm
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+
     }
 }

@@ -38,10 +38,6 @@ namespace FieldBoss_alarm
             System.Diagnostics.Process.Start("https://github.com/ProjectEli/FieldBoss_alarm/releases/latest");
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
