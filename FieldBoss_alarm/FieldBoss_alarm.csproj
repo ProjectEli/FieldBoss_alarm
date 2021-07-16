@@ -7,7 +7,7 @@
     <ProjectGuid>{C795FAF7-8985-421C-A52B-BCDF3844993A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>FieldBoss_alarm</RootNamespace>
-    <AssemblyName>필드보스 알람</AssemblyName>
+    <AssemblyName>FieldBoss_Alarm</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <PublisherName>[제르나] 듀움</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>1.3.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -151,4 +151,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

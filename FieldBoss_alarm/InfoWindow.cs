@@ -16,12 +16,13 @@ namespace FieldBoss_alarm
         public InfoWindow()
         {
             InitializeComponent();
-            string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            var ver = Assembly.GetExecutingAssembly().GetName().Version;
+            var versionString = string.Format("v{0}.{1}.{2}.{3}", ver.Major, ver.Minor, ver.Build, ver.Revision);
             label1.Text = String.Concat(
-                "테일즈위버 필드보스 알림 v",assemblyVersion, Environment.NewLine,
+                "테일즈위버 필드보스 알림 ",versionString, Environment.NewLine,
                 Environment.NewLine,
                 "made by[제르나] 듀움", Environment.NewLine,
-                "e - mail: projecteli@kakao.com", Environment.NewLine,
+                "e - mail: projecteli@kakao.com", Environment.NewLine, Environment.NewLine,
                 "최신 버전 다운");
 
         }
