@@ -83,11 +83,16 @@
   <img src="https://user-images.githubusercontent.com/16854214/125901027-535d07f7-2ba0-4c1d-8f03-3e70d0bf2a40.png">
 </p>
 
+### 작업 표시줄 설정에 트레이 아이콘이 중복되어 나타날 때 해결방법
+[작업표시줄 설정에서 트레이 리스트 중복된 것 및 오래된 것 지우기(본인 블로그)](https://projecteli.tistory.com/192) 참조
+
+
+</br>  
+
 
 ## 개발정보
 
 C#으로 제작되었고 Windows Forms를 사용했습니다. 
-
 
 ## 연락처
 버그가 있는 경우 아래의 연락처로 연락 주시거나 [issues](https://github.com/ProjectEli/FieldBoss_alarm/issues)에 남겨 주세요.
