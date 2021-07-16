@@ -45,23 +45,23 @@ namespace FieldBoss_alarm
         public List<string> 알람문자열확인(DateTime currentTime)
         {
             List<string> 알람문자열 = new List<string>{ };
-            if (골론알림Enabled && isTimeToAlarm(currentTime, _골론시간, this.NsecTimeSpan))
+            if (골론알림Enabled && isTimeToAlarm(currentTime, DateTime변환(골론시간), this.NsecTimeSpan))
             {
                 알람문자열.Add("[베리넨 루미] 골론 " + makeMMssString(this.NsecTimeSpan));
             }
-            if (골모답알림Enabled && isTimeToAlarm(currentTime, _골모답시간, this.NsecTimeSpan))
+            if (골모답알림Enabled && isTimeToAlarm(currentTime, DateTime변환(골모답시간), this.NsecTimeSpan))
             {
                 알람문자열.Add("[베리넨 루미] 골모답 " + makeMMssString(this.NsecTimeSpan));
             }
-            if (아칸알림Enabled && isTimeToAlarm(currentTime, _아칸시간, this.NsecTimeSpan))
+            if (아칸알림Enabled && isTimeToAlarm(currentTime, DateTime변환(아칸시간), this.NsecTimeSpan))
             {
                 알람문자열.Add("[아크론 요새] 아칸 " + makeMMssString(this.NsecTimeSpan));
             }
-            if (스페르첸드알림Enabled && isTimeToAlarm(currentTime, _스페르첸드시간, this.NsecTimeSpan))
+            if (스페르첸드알림Enabled && isTimeToAlarm(currentTime, DateTime변환(스페르첸드시간), this.NsecTimeSpan))
             {
                 알람문자열.Add("[아크론 지하요새] 스페르첸드 " + makeMMssString(this.NsecTimeSpan));
             }
-            if (프라바방어전알림Enabled && isTimeToAlarm(currentTime, _프라바방어전시간, this.NsecTimeSpan))
+            if (프라바방어전알림Enabled && isTimeToAlarm(currentTime, DateTime변환(프라바방어전시간), this.NsecTimeSpan))
             {
                 알람문자열.Add("[프라바 전초기지] 프라바 방어전 " + makeMMssString(this.NsecTimeSpan));
             }
