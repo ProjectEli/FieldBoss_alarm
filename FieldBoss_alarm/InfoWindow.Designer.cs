@@ -51,9 +51,8 @@ namespace FieldBoss_alarm
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(172, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 72);
+            this.label1.Size = new System.Drawing.Size(0, 12);
             this.label1.TabIndex = 4;
-            this.label1.Text = string.Concat("테일즈위버 필드보스 알림 ",Tray.VERSIONSTRING,"\r\n\r\nmade by [제르나] 듀움\r\ne-mail: projecteli@kakao.com\r\n\r\n최신 버전 다운");
             // 
             // linkLabel1
             // 
@@ -70,7 +69,7 @@ namespace FieldBoss_alarm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 201);
+            this.ClientSize = new System.Drawing.Size(452, 201);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -88,6 +87,5 @@ namespace FieldBoss_alarm
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
-
     }
 }

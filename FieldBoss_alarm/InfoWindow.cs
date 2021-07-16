@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,14 @@ namespace FieldBoss_alarm
         public InfoWindow()
         {
             InitializeComponent();
+            string assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            label1.Text = String.Concat(
+                "테일즈위버 필드보스 알림 v",assemblyVersion, Environment.NewLine,
+                Environment.NewLine,
+                "made by[제르나] 듀움", Environment.NewLine,
+                "e - mail: projecteli@kakao.com", Environment.NewLine,
+                "최신 버전 다운");
+
         }
 
         // Singleton Form to avoid multiple window
