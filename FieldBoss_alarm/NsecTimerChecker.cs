@@ -44,11 +44,6 @@ namespace FieldBoss_alarm
 
         public List<string> 알람문자열확인(DateTime currentTime)
         {
-            골론알림Enabled = Tray.골론enabled;
-            골모답알림Enabled = Tray.골모답enabled;
-            아칸알림Enabled = Tray.아칸enabled;
-            스페르첸드알림Enabled = Tray.스페르첸드enabled;
-            프라바방어전알림Enabled = Tray.프라바방어전enabled;
 
             List<string> 알람문자열 = new List<string>{ };
             if (골론알림Enabled && isTimeToAlarm(currentTime, DateTime변환(골론시간), this.NsecTimeSpan))

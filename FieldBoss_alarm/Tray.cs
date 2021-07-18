@@ -114,6 +114,17 @@ namespace FieldBoss_alarm
         
         private void UpdateBossEnabled(NsecTimerChecker timerChecker)
         {
+            골론enabled = 골론ToolStripMenuItem.Checked;
+            골모답enabled = 골모답ToolStripMenuItem.Checked;
+            아칸enabled = 아칸ToolStripMenuItem.Checked;
+            스페르첸드enabled = 스페르첸드ToolStripMenuItem.Checked;
+            프라바방어전enabled = 프라바방어전ToolStripMenuItem.Checked;
+
+            타이머10분enabled = 타이머10분ToolStripMenuItem.Checked;
+            타이머5분enabled = 타이머5분ToolStripMenuItem.Checked;
+            타이머3분enabled = 타이머3분ToolStripMenuItem.Checked;
+            타이머1분enabled = 타이머1분ToolStripMenuItem.Checked;
+
             timerChecker.골론알림Enabled = 골론enabled;
             timerChecker.골모답알림Enabled = 골모답enabled;
             timerChecker.아칸알림Enabled = 아칸enabled;
