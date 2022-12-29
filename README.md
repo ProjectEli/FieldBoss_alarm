@@ -94,10 +94,10 @@
 
 C#으로 제작되었고 Windows Forms를 사용했습니다. 
 
-## 연락처
+## 연락처 (2022.12.29 기준)
 버그가 있는 경우 아래의 연락처로 연락 주시거나 [issues](https://github.com/ProjectEli/FieldBoss_alarm/issues)에 남겨 주세요.
 
-- [X] 인게임: [제르나] 듀움 (1:1이나 쪽지 남겨주시면 확인 가능합니다)
+- [X] 인게임: [네냐플] 듀움 (1:1이나 쪽지 남겨주시면 확인 가능합니다)
 
 - [X] 이메일: projecteli@카카오.com
 
