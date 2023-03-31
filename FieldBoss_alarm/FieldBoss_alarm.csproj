@@ -8,26 +8,29 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>FieldBoss_alarm</RootNamespace>
     <AssemblyName>FieldBoss_Alarm</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>false</Deterministic>
     <TargetFrameworkProfile />
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>게시\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Eli\Desktop\FieldBossAlarm_dist\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://github.com/ProjectEli/FieldBoss_alarm/releases/latest/</InstallUrl>
     <PublisherName>[제르나] 듀움</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>14</ApplicationRevision>
-    <ApplicationVersion>1.3.2.%2a</ApplicationVersion>
+    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationVersion>1.3.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -55,7 +58,7 @@
     <ApplicationIcon>FieldBoss.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>EE9BB18B4AC502EE6BC9E7F1DC10C68BD9CD7766</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>9D8B89DE18A4BF3DB091F704736547D7679B8FC1</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>FieldBoss_alarm_TemporaryKey.pfx</ManifestKeyFile>

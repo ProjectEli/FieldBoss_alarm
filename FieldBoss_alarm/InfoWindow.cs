@@ -21,7 +21,7 @@ namespace FieldBoss_alarm
             label1.Text = String.Concat(
                 "테일즈위버 필드보스 알림 ",versionString, Environment.NewLine,
                 Environment.NewLine,
-                "made by[제르나] 듀움", Environment.NewLine,
+                "made by [네냐플] 듀움", Environment.NewLine,
                 "e - mail: projecteli@kakao.com", Environment.NewLine, Environment.NewLine,
                 "최신 버전 다운");
 

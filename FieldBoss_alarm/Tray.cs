@@ -32,6 +32,7 @@ namespace FieldBoss_alarm
         public static bool 아칸enabled;
         public static bool 스페르첸드enabled;
         public static bool 프라바방어전enabled;
+        public static bool 파멸의기원enabled;
 
         public static bool 타이머10분enabled;
         public static bool 타이머5분enabled;
@@ -60,6 +61,7 @@ namespace FieldBoss_alarm
             아칸enabled = 아칸ToolStripMenuItem.Checked;
             스페르첸드enabled = 스페르첸드ToolStripMenuItem.Checked;
             프라바방어전enabled = 프라바방어전ToolStripMenuItem.Checked;
+            파멸의기원enabled = 파멸의기원ToolStripMenuItem.Checked;
 
             타이머10분enabled = 타이머10분ToolStripMenuItem.Checked;
             타이머5분enabled = 타이머5분ToolStripMenuItem.Checked;
@@ -119,6 +121,7 @@ namespace FieldBoss_alarm
             아칸enabled = 아칸ToolStripMenuItem.Checked;
             스페르첸드enabled = 스페르첸드ToolStripMenuItem.Checked;
             프라바방어전enabled = 프라바방어전ToolStripMenuItem.Checked;
+            파멸의기원enabled = 파멸의기원ToolStripMenuItem.Checked;
 
             타이머10분enabled = 타이머10분ToolStripMenuItem.Checked;
             타이머5분enabled = 타이머5분ToolStripMenuItem.Checked;
@@ -130,6 +133,7 @@ namespace FieldBoss_alarm
             timerChecker.아칸알림Enabled = 아칸enabled;
             timerChecker.스페르첸드알림Enabled = 스페르첸드enabled;
             timerChecker.프라바방어전알림Enabled = 프라바방어전enabled;
+            timerChecker.파멸의기원알림Enabled = 파멸의기원enabled;
         }
 
         private void Tray_Load(object sender, EventArgs e)
@@ -232,6 +236,18 @@ namespace FieldBoss_alarm
             else
             {
                 알림표시("프라바방어전", "[프라바 전초기지] 프라바방어전", false);
+            }
+        }
+
+        private void 파멸의기원StripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (파멸의기원ToolStripMenuItem.Checked)
+            {
+                알림표시("파멸의기원", "[중앙군영] 파멸의기원", true);
+            }
+            else
+            {
+                알림표시("파멸의기원", "[중앙군영] 파멸의기원", false);
             }
         }
 
@@ -403,5 +419,7 @@ namespace FieldBoss_alarm
                 }
             }
         }
+
+
     }
 }

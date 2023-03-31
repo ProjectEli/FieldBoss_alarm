@@ -14,17 +14,21 @@ namespace FieldBoss_alarm
         public static List<string> 스페르첸드시간 = new List<string>() { "01:00:00", "04:00:00", "08:00:00", "16:00:00", "19:00:00", "23:00:00" };
         public static List<string> 프라바방어전시간 = new List<string>() { "02:00:00", "04:00:00", "06:00:00", "08:00:00", "10:00:00", "12:00:00",
                                                                          "14:00:00", "16:00:00", "18:00:00", "20:00:00", "22:00:00", "23:59:59"};
+        public static List<string> 파멸의기원시간 = new List<string>() { "00:30:00", "11:00:00", "20:00:00" };
+
         private static List<DateTime> _골론시간 = DateTime변환(골론시간);
         private static List<DateTime> _골모답시간 = DateTime변환(골모답시간);
         private static List<DateTime> _아칸시간 = DateTime변환(아칸시간);
         private static List<DateTime> _스페르첸드시간 = DateTime변환(스페르첸드시간);
         private static List<DateTime> _프라바방어전시간 = DateTime변환(프라바방어전시간);
+        private static List<DateTime> _파멸의기원시간 = DateTime변환(파멸의기원시간);
 
         public bool 골론알림Enabled;
         public bool 골모답알림Enabled;
         public bool 아칸알림Enabled;
         public bool 스페르첸드알림Enabled;
         public bool 프라바방어전알림Enabled;
+        public bool 파멸의기원알림Enabled;
         private TimeSpan NsecTimeSpan;
         public NsecTimerChecker(int Nsec)
         {
@@ -38,6 +42,7 @@ namespace FieldBoss_alarm
             아칸알림Enabled = Tray.아칸enabled;
             스페르첸드알림Enabled = Tray.스페르첸드enabled;
             프라바방어전알림Enabled = Tray.프라바방어전enabled;
+            파멸의기원알림Enabled = Tray.파멸의기원enabled;
 
             this.NsecTimeSpan = TimeSpan.FromSeconds(Nsec);
         }
@@ -65,6 +70,10 @@ namespace FieldBoss_alarm
             if (프라바방어전알림Enabled && isTimeToAlarm(currentTime, DateTime변환(프라바방어전시간), this.NsecTimeSpan))
             {
                 알람문자열.Add("[프라바 전초기지] 프라바 방어전 " + makeMMssString(this.NsecTimeSpan));
+            }
+            if (파멸의기원알림Enabled && isTimeToAlarm(currentTime, DateTime변환(파멸의기원시간), this.NsecTimeSpan))
+            {
+                알람문자열.Add("[중앙군영] 파멸의기원 " + makeMMssString(this.NsecTimeSpan));
             }
             return 알람문자열;
         }
