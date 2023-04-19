@@ -56,6 +56,18 @@ namespace FieldBoss_alarm
             notifyIcon1.ContextMenuStrip = contextMenuStrip1;
             notifyIcon1.ShowBalloonTip(DEFAULTTIMEOUT, "실행 확인", "필드보스 알람 예약이 실행되었습니다.", ToolTipIcon.Info);
 
+            // read settings
+            골론ToolStripMenuItem.Checked = Properties.Settings.Default.골론알림;
+            골모답ToolStripMenuItem.Checked = Properties.Settings.Default.골모답알림;
+            아칸ToolStripMenuItem.Checked = Properties.Settings.Default.아칸알림;
+            스페르첸드ToolStripMenuItem.Checked = Properties.Settings.Default.스페르첸드알림;
+            프라바방어전ToolStripMenuItem.Checked = Properties.Settings.Default.프라바방어전알림;
+            파멸의기원ToolStripMenuItem.Checked = Properties.Settings.Default.파멸의기원알림;
+            타이머10분ToolStripMenuItem.Checked = Properties.Settings.Default.알림10분전;
+            타이머5분ToolStripMenuItem.Checked = Properties.Settings.Default.알림5분전;
+            타이머3분ToolStripMenuItem.Checked = Properties.Settings.Default.알림3분전;
+            타이머1분ToolStripMenuItem.Checked = Properties.Settings.Default.알림1분전;
+
             골론enabled = 골론ToolStripMenuItem.Checked;
             골모답enabled = 골모답ToolStripMenuItem.Checked;
             아칸enabled = 아칸ToolStripMenuItem.Checked;
@@ -156,6 +168,7 @@ namespace FieldBoss_alarm
 
         private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.Save();
             this.Close();
         }
 
@@ -176,6 +189,8 @@ namespace FieldBoss_alarm
         private void 골론ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // 골론ToolStripMenuItem.Checked = !골론ToolStripMenuItem.Checked; // 아예 메뉴 아이템 속성에 클릭하면 체크되게 넣어버렸음
+            Properties.Settings.Default.골론알림= 골론ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             if (골론ToolStripMenuItem.Checked)
             {
                 알림표시("골론", "[베리넨 루미] 골론", true);
@@ -193,6 +208,8 @@ namespace FieldBoss_alarm
 
         private void 골모답ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.골모답알림 = 골모답ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             if (골모답ToolStripMenuItem.Checked)
             {
                 알림표시("골모답", "[베리넨 루미] 골모답", true);
@@ -205,6 +222,8 @@ namespace FieldBoss_alarm
 
         private void 아칸ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.아칸알림 = 아칸ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             if (아칸ToolStripMenuItem.Checked)
             {
                 알림표시("아칸", "[아크론 요새] 아칸", true);
@@ -217,6 +236,8 @@ namespace FieldBoss_alarm
 
         private void 스페르첸드ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.스페르첸드알림 = 스페르첸드ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             if (스페르첸드ToolStripMenuItem.Checked)
             {
                 알림표시("스페르첸드", "[아크론 지하요새] 스페르첸드", true);
@@ -229,6 +250,8 @@ namespace FieldBoss_alarm
 
         private void 프라바방어전ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.프라바방어전알림 = 프라바방어전ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             if (프라바방어전ToolStripMenuItem.Checked)
             {
                 알림표시("프라바방어전", "[프라바 전초기지] 프라바방어전", true);
@@ -241,6 +264,8 @@ namespace FieldBoss_alarm
 
         private void 파멸의기원StripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.파멸의기원알림 = 파멸의기원ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             if (파멸의기원ToolStripMenuItem.Checked)
             {
                 알림표시("파멸의기원", "[중앙군영] 파멸의기원", true);
@@ -265,6 +290,8 @@ namespace FieldBoss_alarm
 
         private void 타이머10분ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.알림10분전 = 타이머10분ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             타이머10분enabled = 타이머10분ToolStripMenuItem.Checked;
             if (타이머10분ToolStripMenuItem.Checked)
             {
@@ -278,7 +305,8 @@ namespace FieldBoss_alarm
 
         private void 타이머5분ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Properties.Settings.Default.알림5분전 = 타이머5분ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             타이머5분enabled = 타이머5분ToolStripMenuItem.Checked;
             if (타이머5분ToolStripMenuItem.Checked)
             {
@@ -292,7 +320,8 @@ namespace FieldBoss_alarm
 
         private void 타이머3분ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Properties.Settings.Default.알림3분전 = 타이머3분ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             타이머3분enabled = 타이머3분ToolStripMenuItem.Checked;
             if (타이머3분ToolStripMenuItem.Checked)
             {
@@ -306,6 +335,8 @@ namespace FieldBoss_alarm
 
         private void 타이머1분ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.알림1분전 = 타이머1분ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             타이머1분enabled = 타이머1분ToolStripMenuItem.Checked;
             if (타이머1분ToolStripMenuItem.Checked)
             {
@@ -340,6 +371,8 @@ namespace FieldBoss_alarm
 
         private void 윈도우시작시자동실행ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.자동실행 = 윈도우시작시자동실행ToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             if (윈도우시작시자동실행ToolStripMenuItem.Checked)
             {
                 시작프로그램등록(programName, Application.ExecutablePath);
