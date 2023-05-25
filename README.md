@@ -89,6 +89,11 @@
 
 </br>  
 
+## 알람이 안올 때
+1. 윈도우 설정 - 시스템 - 알림 - 알림 켬, 방해금지 끔, 자동으로 방해금지 끄기
+![image](https://github.com/ProjectEli/FieldBoss_alarm/assets/16854214/aae71a2a-4183-4b75-ba7e-2a73646d8f83)
+
+</br>  
 
 ## 개발정보
 
@@ -99,7 +104,7 @@ C#으로 제작되었고 Windows Forms를 사용했습니다.
 
 - [X] 인게임: [네냐플] 듀움 (1:1이나 쪽지 남겨주시면 확인 가능합니다)
 
-- [X] 이메일: projecteli@카카오.com
+- [X] 이메일: projecteli at kakao.com
 
 
 ## 라이센스 정보
